@@ -1,0 +1,31 @@
+{
+  "name": "funcionario",
+  "version": "1.0.0",
+  "description": "Sistema de Cadastro de Funcionario",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagoafelipe/livro-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mean",
+    "livro"
+  ],
+  "author": "Tiago Felipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagoafelipe/livro-nodejs/issues"
+  },
+  "homepage": "https://github.com/tiagoafelipe/livro-nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.8.8",
+    "express-load": "^1.1.15",
+    "method-override": "^2.3.5"
+  }
+}

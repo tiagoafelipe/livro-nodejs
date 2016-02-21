@@ -1,0 +1,27 @@
+{
+  "name": "funcionario",
+  "description": "Sistema de Cadastro de Funcionario",
+  "main": "server.js",
+  "authors": [
+    "Tiago Felipe"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "mean",
+    "livro"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0"
+  }
+}
