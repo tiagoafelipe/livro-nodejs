@@ -7,16 +7,16 @@
 Novo
 </button>
 <input ng-model="filtro" type="search" placeholder="parte do nome">
-<p>Funcionarios cadastrados: {{total}}</p>
+<p>Funcionarios cadastrados: {{funcionarios.length}}</p>
 <div class="table-responsive">
 <table class="table table-hover">
 	<tr ng-repeat="funcionario in funcionarios | filter: filtro">
 		<td>
-			<a>{{funcionario.nome}}</a>
+			<a ng-href="#/funcionario/{{funcionario._id}}">{{funcionario.nome}}</a>
 		</td>
 		<td>{{funcionario.email}}</td>
 		<td class="text-center">
-			<button class="btn btn-warning">
+			<button class="btn btn-warning" ng-click="remove(funcionario)">
 				Remover
 			</buttom>
 		</td>

@@ -1,29 +1,32 @@
-appFuncionario.controller('FuncionariosController',
-function($scope , $routeParams) {
+appFuncionario.controller('FuncionariosController',function($scope, $routeParams, $resource) {
 
-	console.log($routeParams.funcionarioId);
- $scope.filtro = '';
- $scope.funcionarios = [{
-					"_id": 1,
-					"nome": "Funcionario Angular 1",
-					"email": "func1@empresa.com.br"
-					},
-					{
-					"_id": 2,
-					"nome": "Funcionario Angular 2",
-					"email": "func2@empresa.com.br"
-					},
-					{
-					"_id": 3,
-					"nome": "Funcionario Angular 3",
-					"email": "func3@empresa.com.br"
-					}
-					];
+$scope.funcionarios = [];
+$scope.filtro = '';
+$scope.mensagem = {texto: ''};
 
-	$scope.total = 0;
+var Funcionario = $resource('/funcionarios/:id');
 
-	$scope.incrementa = function(){
-			
-			$scope.total ++;
-	};
+function buscaFuncionarios() {
+	Funcionario.query(
+		function(funcionarios) {
+			$scope.funcionarios = funcionarios;
+		},
+		function(erro) {
+			$scope.mensagem = {texto: 'Não foi possível obter a lista.'};
+			console.log(erro)
+		});
+}
+
+buscaFuncionarios();
+$scope.remove = function(funcionario) {
+	Funcionario.delete({id: funcionario._id},
+		buscaFuncionarios,
+		function(erro) {
+			$scope.mensagem = {texto: 'Não foi possível remover o funcionario.'};
+			console.log(erro);
+		}
+	);
+};
+
+
 });
